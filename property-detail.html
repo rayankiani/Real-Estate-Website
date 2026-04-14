@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Property Detail | EliteEstates Realty Group</title>
+  <meta name="description" content="View luxury property details, gallery, amenities, and neighborhood insights.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css';">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/pages/properties.css">
+</head>
+<body class="page-property-detail">
+  <a class="skip-nav" href="#main-content">Skip to content</a>
+
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader__logo">Elite<span>Estates</span></div>
+    <div class="loader__bar-wrap"><div class="loader__bar"></div></div>
+    <div class="loader__text">Loading property...</div>
+  </div>
+  <div id="scroll-progress"></div>
+
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+      <a class="navbar__logo" href="index.html" aria-label="EliteEstates Realty Group">
+        <span class="navbar__logo-icon">E</span>
+        <span class="navbar__logo-text">EliteEstates <span>Realty Group</span></span>
+      </a>
+      <nav class="navbar__nav" aria-label="Primary">
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="index.html">Home</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="properties.html">Properties</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="services.html">Services</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="about.html">About</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="agents.html">Agents</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="blog.html">Blog</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="contact.html">Contact</a></div>
+      </nav>
+      <div class="navbar__actions">
+        <button class="navbar__action-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <button class="navbar__action-btn" data-action="favorites" aria-label="Saved properties"><i class="fas fa-heart"></i><span class="badge-dot" aria-hidden="true"></span></button>
+        <button id="currency-toggle" class="navbar__action-btn" aria-label="Toggle currency">USD</button>
+        <a class="navbar__phone" href="tel:+13105550101"><i class="fas fa-phone"></i> +1 (310) 555-0101</a>
+        <a class="btn btn--gold btn--sm" href="contact.html">List Property</a>
+        <button class="navbar__hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__nav">
+      <button class="mobile-menu__close" aria-label="Close menu">×</button>
+      <a class="mobile-menu__link" href="index.html">Home</a>
+      <a class="mobile-menu__link" href="properties.html">Properties</a>
+      <a class="mobile-menu__link" href="services.html">Services</a>
+      <a class="mobile-menu__link" href="about.html">About</a>
+      <a class="mobile-menu__link" href="agents.html">Agents</a>
+      <a class="mobile-menu__link" href="blog.html">Blog</a>
+      <a class="mobile-menu__link" href="contact.html">Contact</a>
+      <div class="mobile-menu__actions">
+        <a class="btn btn--primary" href="properties.html">Browse Listings</a>
+        <a class="btn btn--outline" href="contact.html">Schedule a Tour</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" class="detail-page">
+    <section class="page-hero page-hero--detail">
+      <div class="page-hero__bg"></div>
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content">
+        <div class="container">
+          <div class="page-hero__breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> <a href="properties.html">Properties</a> <span class="sep">/</span> Detail</div>
+          <h1 class="page-hero__title">Modern Luxury Villa</h1>
+          <p class="page-hero__subtitle">Beverly Hills, CA · Private gated estate with panoramic city views</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container detail-layout">
+      <div>
+        <!-- Gallery -->
+        <div class="detail-gallery" data-aos="fade-up">
+          <div class="detail-gallery__main">
+            <a href="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600" class="glightbox" data-gallery="property">
+              <img class="detail-gallery__main-img" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200" alt="Modern Luxury Villa" loading="lazy">
+            </a>
+            <div class="detail-gallery__badge"><span class="badge badge--featured">Featured</span></div>
+            <div class="detail-gallery__actions">
+              <button class="detail-gallery__action-btn"><i class="fas fa-vr-cardboard"></i> Virtual Tour</button>
+              <button class="detail-gallery__action-btn"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+          </div>
+          <div class="detail-gallery__thumbs">
+            <div class="detail-gallery__thumb active"><a href="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600" class="glightbox" data-gallery="property"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400" alt=""></a></div>
+            <div class="detail-gallery__thumb"><a href="https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1600" class="glightbox" data-gallery="property"><img src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=400" alt=""></a></div>
+            <div class="detail-gallery__thumb"><a href="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1600" class="glightbox" data-gallery="property"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400" alt=""></a></div>
+            <div class="detail-gallery__thumb"><a href="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600" class="glightbox" data-gallery="property"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400" alt=""></a></div>
+            <div class="detail-gallery__thumb"><a href="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600" class="glightbox" data-gallery="property"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400" alt=""></a></div>
+          </div>
+        </div>
+
+        <!-- Property Info -->
+        <div class="detail-info" data-aos="fade-up">
+          <div class="detail-info__header">
+            <div>
+              <h2 class="detail-info__title">Modern Luxury Villa</h2>
+              <p class="detail-info__address"><i class="fas fa-map-marker-alt"></i> 450 Rodeo Drive, Beverly Hills, CA</p>
+            </div>
+            <div class="detail-info__price" data-usd-price="2850000">$2.85M</div>
+          </div>
+
+          <div class="detail-quick-stats">
+            <div class="detail-quick-stat">
+              <div class="detail-quick-stat__icon"><i class="fas fa-bed"></i></div>
+              <div class="detail-quick-stat__info"><span>5 Beds</span><span>Bedrooms</span></div>
+            </div>
+            <div class="detail-quick-stat">
+              <div class="detail-quick-stat__icon"><i class="fas fa-bath"></i></div>
+              <div class="detail-quick-stat__info"><span>4 Baths</span><span>Bathrooms</span></div>
+            </div>
+            <div class="detail-quick-stat">
+              <div class="detail-quick-stat__icon"><i class="fas fa-vector-square"></i></div>
+              <div class="detail-quick-stat__info"><span>4,200 sqft</span><span>Area</span></div>
+            </div>
+            <div class="detail-quick-stat">
+              <div class="detail-quick-stat__icon"><i class="fas fa-warehouse"></i></div>
+              <div class="detail-quick-stat__info"><span>2 Cars</span><span>Garage</span></div>
+            </div>
+          </div>
+
+          <div class="detail-tags">
+            <span class="detail-tag"><i class="fas fa-couch"></i> Furnished</span>
+            <span class="detail-tag"><i class="fas fa-water"></i> Swimming Pool</span>
+            <span class="detail-tag"><i class="fas fa-tree"></i> Garden</span>
+            <span class="detail-tag"><i class="fas fa-shield"></i> Gated</span>
+          </div>
+
+          <div class="tabs-wrapper">
+            <div class="tabs">
+              <button class="tab-btn active" data-tab="tab-overview">Overview</button>
+              <button class="tab-btn" data-tab="tab-features">Features & Amenities</button>
+              <button class="tab-btn" data-tab="tab-floor">Floor Plan</button>
+              <button class="tab-btn" data-tab="tab-location">Location</button>
+              <button class="tab-btn" data-tab="tab-video">Video Tour</button>
+            </div>
+            <div class="tab-panel active" id="tab-overview">
+              <p>Designed for discerning buyers, this contemporary villa offers soaring ceilings, a private courtyard, smart-home automation, and a resort-style outdoor lounge. Floor-to-ceiling glass frames panoramic city views.</p>
+            </div>
+            <div class="tab-panel" id="tab-features">
+              <ul>
+                <li>Chef-grade kitchen with integrated appliances</li>
+                <li>Private theater and wine cellar</li>
+                <li>Infinity-edge pool and spa</li>
+                <li>Solar-ready roof and EV charging</li>
+              </ul>
+            </div>
+            <div class="tab-panel" id="tab-floor">
+              <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200" alt="Floor plan" loading="lazy">
+            </div>
+            <div class="tab-panel" id="tab-location">
+              <div id="neighborhood-map" class="detail-map"></div>
+            </div>
+            <div class="tab-panel" id="tab-video">
+              <div class="video-embed">
+                <iframe title="Virtual Tour" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inline Mortgage Calculator -->
+        <div class="detail-info" id="detail-mortgage-calc" data-aos="fade-up">
+          <h3 class="detail-info__title">Mortgage Estimator</h3>
+          <div class="detail-mortgage-grid">
+            <div class="form-group">
+              <label>Property Price</label>
+              <input id="detail-loan-price" type="number" value="2850000">
+            </div>
+            <div class="form-group">
+              <label>Down Payment %</label>
+              <input id="detail-down-pct" type="number" value="20">
+            </div>
+            <div class="form-group">
+              <label>Interest Rate %</label>
+              <input id="detail-rate" type="number" value="6.5">
+            </div>
+            <div class="form-group">
+              <label>Tenure (Years)</label>
+              <input id="detail-tenure" type="number" value="25">
+            </div>
+          </div>
+          <div class="detail-mortgage-result">Estimated EMI: <strong id="detail-emi-result">$0</strong></div>
+        </div>
+
+        <!-- Similar Properties -->
+        <div class="detail-info" data-aos="fade-up">
+          <h3 class="detail-info__title">Similar Properties</h3>
+          <div class="similar-scroll">
+            <article class="property-card property-card--list">
+              <div class="property-card__image"><img class="property-card__img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700" alt="Garden Townhouse" loading="lazy"></div>
+              <div class="property-card__body">
+                <div class="property-card__type"><i class="fas fa-home"></i>Townhouse</div>
+                <h3 class="property-card__title"><a href="property-detail.html">Garden Townhouse</a></h3>
+                <p class="property-card__location"><i class="fas fa-map-marker-alt"></i>Boston, MA</p>
+                <div class="property-card__footer"><div class="property-card__price" data-usd-price="1350000">$1.35M</div></div>
+              </div>
+            </article>
+            <article class="property-card property-card--list">
+              <div class="property-card__image"><img class="property-card__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=700" alt="High-Rise Condo" loading="lazy"></div>
+              <div class="property-card__body">
+                <div class="property-card__type"><i class="fas fa-building"></i>Condo</div>
+                <h3 class="property-card__title"><a href="property-detail.html">High-Rise Condo</a></h3>
+                <p class="property-card__location"><i class="fas fa-map-marker-alt"></i>San Francisco, CA</p>
+                <div class="property-card__footer"><div class="property-card__price" data-usd-price="1100000">$1.1M</div></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="agent-card agent-card--sidebar">
+          <div class="agent-card__image">
+            <img class="agent-card__img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Alexandra Rhodes" loading="lazy">
+            <div class="agent-card__overlay"></div>
+          </div>
+          <div class="agent-card__body">
+            <h3 class="agent-card__name">Alexandra Rhodes</h3>
+            <p class="agent-card__title">Luxury Property Specialist</p>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.9</div>
+            <div class="agent-card__actions">
+              <a class="btn btn--primary btn--sm" href="tel:+13105550101"><i class="fas fa-phone"></i> Call Agent</a>
+              <a class="btn btn--outline btn--sm" href="mailto:alexandra@eliteestates.com"><i class="fas fa-envelope"></i> Email</a>
+              <a class="btn btn--outline btn--sm" href="https://wa.me/13105550101" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              <a class="btn btn--gold btn--sm" href="contact.html">Schedule Visit</a>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="footer__brand-logo">
+              <span class="logo-icon">E</span>
+              <div>
+                <div class="footer__brand-name">EliteEstates <span>Realty Group</span></div>
+                <p class="footer__tagline">Luxury living curated with precision, integrity, and unmatched service.</p>
+              </div>
+            </div>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Quick Links</h3>
+            <div class="footer__links">
+              <a href="about.html">About Us</a>
+              <a href="services.html">Services</a>
+              <a href="agents.html">Agents</a>
+              <a href="blog.html">Blog</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Properties</h3>
+            <div class="footer__links">
+              <a href="properties.html">All Listings</a>
+              <a href="properties.html#luxury">Luxury Estates</a>
+              <a href="properties.html#commercial">Commercial</a>
+              <a href="mortgage-calculator.html">Mortgage Calculator</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Contact</h3>
+            <div class="footer__contact-item"><i class="fas fa-map-marker-alt"></i>450 Rodeo Drive, Beverly Hills, CA</div>
+            <div class="footer__contact-item"><i class="fas fa-phone"></i>+1 (310) 555-0101</div>
+            <div class="footer__contact-item"><i class="fas fa-envelope"></i>concierge@eliteestates.com</div>
+            <form class="footer__newsletter-form">
+              <input class="footer__newsletter-input" type="email" placeholder="Newsletter email">
+              <button class="btn btn--gold btn--sm" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner container">
+        <div class="footer__copyright">© 2026 EliteEstates Realty Group. All Rights Reserved.</div>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a id="whatsapp-btn" href="https://wa.me/13105550101" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <div id="cookie-banner" role="dialog" aria-live="polite">
+    <p class="cookie-banner__text">We use cookies to personalize your browsing experience and analyze traffic.</p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-decline" class="btn btn--outline btn--sm">Decline</button>
+      <button id="cookie-accept" class="btn btn--gold btn--sm">Accept</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>window.gsap||document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"><\\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>window.ScrollTrigger||document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>window.AOS||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>window.GLightbox||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>window.L||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"><\\/script>')</script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/mortgage.js"></script>
+  <script src="js/map.js"></script>
+  <script>
+    if (window.GLightbox) GLightbox({ selector: '.glightbox' });
+    if (typeof initNeighborhoodMap === 'function') initNeighborhoodMap(34.0736, -118.4004);
+  </script>
+<script>window.addEventListener('load',function(){var l=document.getElementById('page-loader');if(l)l.classList.add('hidden');});setTimeout(function(){var l=document.getElementById('page-loader');if(l)l.classList.add('hidden');},4000);</script>\n</body>
+</html>
+
+
+

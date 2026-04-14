@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | EliteEstates Realty Group</title>
+  <meta name="description" content="Contact EliteEstates Realty Group for luxury real estate inquiries.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css';">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/pages/contact.css">
+</head>
+<body class="page-contact">
+  <a class="skip-nav" href="#main-content">Skip to content</a>
+
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader__logo">Elite<span>Estates</span></div>
+    <div class="loader__bar-wrap"><div class="loader__bar"></div></div>
+    <div class="loader__text">Loading contact...</div>
+  </div>
+  <div id="scroll-progress"></div>
+
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+      <a class="navbar__logo" href="index.html" aria-label="EliteEstates Realty Group">
+        <span class="navbar__logo-icon">E</span>
+        <span class="navbar__logo-text">EliteEstates <span>Realty Group</span></span>
+      </a>
+      <nav class="navbar__nav" aria-label="Primary">
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="index.html">Home</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="properties.html">Properties</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="services.html">Services</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="about.html">About</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="agents.html">Agents</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="blog.html">Blog</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link active" href="contact.html">Contact</a></div>
+      </nav>
+      <div class="navbar__actions">
+        <button class="navbar__action-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <button class="navbar__action-btn" data-action="favorites" aria-label="Saved properties"><i class="fas fa-heart"></i><span class="badge-dot" aria-hidden="true"></span></button>
+        <button id="currency-toggle" class="navbar__action-btn" aria-label="Toggle currency">USD</button>
+        <a class="navbar__phone" href="tel:+13105550101"><i class="fas fa-phone"></i> +1 (310) 555-0101</a>
+        <a class="btn btn--gold btn--sm" href="contact.html">List Property</a>
+        <button class="navbar__hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__nav">
+      <button class="mobile-menu__close" aria-label="Close menu">×</button>
+      <a class="mobile-menu__link" href="index.html">Home</a>
+      <a class="mobile-menu__link" href="properties.html">Properties</a>
+      <a class="mobile-menu__link" href="services.html">Services</a>
+      <a class="mobile-menu__link" href="about.html">About</a>
+      <a class="mobile-menu__link" href="agents.html">Agents</a>
+      <a class="mobile-menu__link" href="blog.html">Blog</a>
+      <a class="mobile-menu__link active" href="contact.html">Contact</a>
+      <div class="mobile-menu__actions">
+        <a class="btn btn--primary" href="properties.html">Browse Listings</a>
+        <a class="btn btn--outline" href="contact.html">Schedule a Tour</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" class="contact-page">
+    <section class="page-hero page-hero--contact">
+      <div class="page-hero__bg"></div>
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content">
+        <div class="container">
+          <div class="page-hero__breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> Contact</div>
+          <h1 class="page-hero__title">Let's Talk Luxury Real Estate</h1>
+          <p class="page-hero__subtitle">Schedule a private viewing or request a bespoke property shortlist.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-layout">
+        <div class="contact-form-wrap" data-aos="fade-right">
+          <span class="contact-form__eyebrow">Request a Consultation</span>
+          <h2 class="contact-form__title">Send Us a Message</h2>
+          <p class="contact-form__subtitle">Our concierge team responds within one business day.</p>
+
+          <form id="contact-form" novalidate>
+            <div class="contact-form-grid">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input id="name" type="text" required>
+                <small class="form-error-msg" data-error-for="name"></small>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" required>
+                <small class="form-error-msg" data-error-for="email"></small>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input id="phone" type="tel" required>
+                <small class="form-error-msg" data-error-for="phone"></small>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" required>
+                  <option value="">Select a topic</option>
+                  <option>Schedule a Tour</option>
+                  <option>List a Property</option>
+                  <option>Investment Advisory</option>
+                  <option>Relocation Services</option>
+                </select>
+                <small class="form-error-msg" data-error-for="subject"></small>
+              </div>
+              <div class="form-group form-group--full">
+                <label for="interest">Property Interest</label>
+                <input id="interest" type="text" placeholder="Villa, penthouse, commercial">
+              </div>
+              <div class="form-group form-group--full">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" required></textarea>
+                <small class="form-error-msg" data-error-for="message"></small>
+              </div>
+              <div class="form-group form-group--full">
+                <label>Upload Documents</label>
+                <label class="file-upload-area">
+                  <input id="file-upload" type="file" hidden>
+                  <div class="file-upload-area__icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                  <div class="file-upload-area__text">Drag and drop or <strong>browse</strong></div>
+                </label>
+              </div>
+            </div>
+            <button class="btn btn--gold" type="submit">Send Message</button>
+          </form>
+
+          <div class="contact-form__success" id="contact-success">
+            <div class="success-checkmark"><i class="fas fa-check"></i></div>
+            <h3>Message Sent!</h3>
+            <p>We'll be in touch shortly.</p>
+          </div>
+        </div>
+
+        <div class="contact-info-wrap" data-aos="fade-left">
+          <div class="contact-info-card">
+            <h3 class="contact-info-card__title"><i class="fas fa-building"></i> Office</h3>
+            <div class="contact-info-items">
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                  <div class="contact-info-item__label">Address</div>
+                  <div class="contact-info-item__value">450 Rodeo Drive, Suite 300, Beverly Hills, CA 90210</div>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <div class="contact-info-item__label">Phone</div>
+                  <div class="contact-info-item__value">+1 (310) 555-0101</div>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <div class="contact-info-item__label">Email</div>
+                  <div class="contact-info-item__value">concierge@eliteestates.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <h3 class="contact-info-card__title"><i class="fas fa-clock"></i> Office Hours</h3>
+            <div class="office-hours">
+              <div class="office-hour-row"><span class="office-hour-row__day">Mon - Fri</span><span class="office-hour-row__time">9:00 AM - 7:00 PM</span></div>
+              <div class="office-hour-row"><span class="office-hour-row__day">Saturday</span><span class="office-hour-row__time">10:00 AM - 5:00 PM</span></div>
+              <div class="office-hour-row"><span class="office-hour-row__day">Sunday</span><span class="office-hour-row__closed">Closed</span></div>
+            </div>
+          </div>
+
+          <div id="contact-map" class="contact-map"></div>
+
+          <div class="contact-social">
+            <a class="contact-social-link" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a class="contact-social-link" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a class="contact-social-link" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a class="contact-social-link" href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="footer__brand-logo">
+              <span class="logo-icon">E</span>
+              <div>
+                <div class="footer__brand-name">EliteEstates <span>Realty Group</span></div>
+                <p class="footer__tagline">Luxury living curated with precision, integrity, and unmatched service.</p>
+              </div>
+            </div>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Quick Links</h3>
+            <div class="footer__links">
+              <a href="about.html">About Us</a>
+              <a href="services.html">Services</a>
+              <a href="agents.html">Agents</a>
+              <a href="blog.html">Blog</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Properties</h3>
+            <div class="footer__links">
+              <a href="properties.html">All Listings</a>
+              <a href="properties.html#luxury">Luxury Estates</a>
+              <a href="properties.html#commercial">Commercial</a>
+              <a href="mortgage-calculator.html">Mortgage Calculator</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Contact</h3>
+            <div class="footer__contact-item"><i class="fas fa-map-marker-alt"></i>450 Rodeo Drive, Beverly Hills, CA</div>
+            <div class="footer__contact-item"><i class="fas fa-phone"></i>+1 (310) 555-0101</div>
+            <div class="footer__contact-item"><i class="fas fa-envelope"></i>concierge@eliteestates.com</div>
+            <form class="footer__newsletter-form">
+              <input class="footer__newsletter-input" type="email" placeholder="Newsletter email">
+              <button class="btn btn--gold btn--sm" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner container">
+        <div class="footer__copyright">© 2026 EliteEstates Realty Group. All Rights Reserved.</div>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a id="whatsapp-btn" href="https://wa.me/13105550101" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <div id="cookie-banner" role="dialog" aria-live="polite">
+    <p class="cookie-banner__text">We use cookies to personalize your browsing experience and analyze traffic.</p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-decline" class="btn btn--outline btn--sm">Decline</button>
+      <button id="cookie-accept" class="btn btn--gold btn--sm">Accept</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>window.gsap||document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"><\\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>window.ScrollTrigger||document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>window.AOS||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>window.L||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"><\\/script>')</script>
+  <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
+  <script>
+    if (typeof initContactMap === 'function') initContactMap();
+
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('contact-success');
+    const fields = ['name','email','phone','subject','message'];
+
+    function showError(id, msg) {
+      const el = document.querySelector(`[data-error-for="${id}"]`);
+      if (el) el.textContent = msg;
+      const input = document.getElementById(id);
+      const group = input ? input.closest('.form-group') : null;
+      if (group) group.classList.add('has-error');
+    }
+
+    function clearError(id) {
+      const el = document.querySelector(`[data-error-for="${id}"]`);
+      if (el) el.textContent = '';
+      const input = document.getElementById(id);
+      const group = input ? input.closest('.form-group') : null;
+      if (group) group.classList.remove('has-error');
+    }
+
+    function validateField(id) {
+      const input = document.getElementById(id);
+      if (!input) return true;
+      const val = input.value.trim();
+      if (!val) { showError(id, 'This field is required'); return false; }
+      if (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { showError(id, 'Enter a valid email'); return false; }
+      if (id === 'phone' && val.length < 7) { showError(id, 'Enter a valid phone'); return false; }
+      clearError(id);
+      return true;
+    }
+
+    fields.forEach(id => {
+      const input = document.getElementById(id);
+      if (input) input.addEventListener('input', () => validateField(id));
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const allValid = fields.every(validateField);
+      if (!allValid) return;
+      form.style.display = 'none';
+      success.classList.add('visible');
+    });
+  </script>
+<script>window.addEventListener('load',function(){var l=document.getElementById('page-loader');if(l)l.classList.add('hidden');});setTimeout(function(){var l=document.getElementById('page-loader');if(l)l.classList.add('hidden');},4000);</script></body>
+</html>
+
+
+

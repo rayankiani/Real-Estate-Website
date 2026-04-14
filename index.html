@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EliteEstates Realty Group | Luxury Real Estate</title>
+  <meta name="description" content="EliteEstates Realty Group is a premium real estate agency specializing in luxury homes, villas, and investment properties.">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css';">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body class="page-home">
+  <!-- Skip Nav -->
+  <a class="skip-nav" href="#main-content">Skip to content</a>
+
+  <!-- Page Loader -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader__logo">Elite<span>Estates</span></div>
+    <div class="loader__bar-wrap"><div class="loader__bar"></div></div>
+    <div class="loader__text">Loading premium listings...</div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+      <a class="navbar__logo" href="index.html" aria-label="EliteEstates Realty Group">
+        <span class="navbar__logo-icon">E</span>
+        <span class="navbar__logo-text">EliteEstates <span>Realty Group</span></span>
+      </a>
+
+      <nav class="navbar__nav" aria-label="Primary">
+        <div class="navbar__nav-item">
+          <a class="navbar__nav-link active" href="index.html">Home</a>
+        </div>
+        <div class="navbar__nav-item">
+          <a class="navbar__nav-link" href="properties.html">Properties <i class="fas fa-chevron-down"></i></a>
+          <div class="navbar__dropdown">
+            <a class="navbar__dropdown-link" href="properties.html"><i class="fas fa-building"></i>All Listings</a>
+            <a class="navbar__dropdown-link" href="properties.html#luxury"><i class="fas fa-gem"></i>Luxury Estates</a>
+            <a class="navbar__dropdown-link" href="properties.html#commercial"><i class="fas fa-city"></i>Commercial</a>
+            <a class="navbar__dropdown-link" href="property-detail.html"><i class="fas fa-house"></i>Property Detail</a>
+          </div>
+        </div>
+        <div class="navbar__nav-item">
+          <a class="navbar__nav-link" href="services.html">Services</a>
+        </div>
+        <div class="navbar__nav-item">
+          <a class="navbar__nav-link" href="about.html">About</a>
+        </div>
+        <div class="navbar__nav-item">
+          <a class="navbar__nav-link" href="agents.html">Agents</a>
+        </div>
+        <div class="navbar__nav-item">
+          <a class="navbar__nav-link" href="blog.html">Blog</a>
+        </div>
+        <div class="navbar__nav-item">
+          <a class="navbar__nav-link" href="contact.html">Contact</a>
+        </div>
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="navbar__action-btn" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="navbar__action-btn" data-action="favorites" aria-label="Saved properties">
+          <i class="fas fa-heart"></i>
+          <span class="badge-dot" aria-hidden="true"></span>
+        </button>
+        <button id="currency-toggle" class="navbar__action-btn" aria-label="Toggle currency">USD</button>
+        <a class="navbar__phone" href="tel:+13105550101"><i class="fas fa-phone"></i> +1 (310) 555-0101</a>
+        <a class="btn btn--gold btn--sm" href="contact.html">List Property</a>
+        <button class="navbar__hamburger" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__nav">
+      <button class="mobile-menu__close" aria-label="Close menu">×</button>
+      <a class="mobile-menu__link" href="index.html">Home</a>
+      <a class="mobile-menu__link" href="properties.html" data-sub="mobile-sub-properties">Properties <i class="fas fa-chevron-down mobile-sub-arrow"></i></a>
+      <div class="mobile-menu__sub" id="mobile-sub-properties">
+        <a href="properties.html">All Listings</a>
+        <a href="properties.html#luxury">Luxury Estates</a>
+        <a href="properties.html#commercial">Commercial</a>
+        <a href="property-detail.html">Property Detail</a>
+      </div>
+      <a class="mobile-menu__link" href="services.html">Services</a>
+      <a class="mobile-menu__link" href="about.html">About</a>
+      <a class="mobile-menu__link" href="agents.html">Agents</a>
+      <a class="mobile-menu__link" href="blog.html">Blog</a>
+      <a class="mobile-menu__link" href="contact.html">Contact</a>
+
+      <div class="mobile-menu__actions">
+        <a class="btn btn--primary" href="properties.html">Browse Listings</a>
+        <a class="btn btn--outline" href="contact.html">Schedule a Tour</a>
+      </div>
+
+      <div class="mobile-menu__social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__canvas-wrap">
+        <canvas id="three-canvas" aria-hidden="true"></canvas>
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <div class="hero__inner">
+          <div class="hero__eyebrow"><span class="hero__eyebrow-line"></span>Premium Real Estate Advisory</div>
+          <h1 class="hero__headline">Find Your Perfect Place to <span class="accent-word">Call Home</span></h1>
+          <p class="hero__subtitle">
+            <span class="typewriter-container"><span class="typewriter">Curated luxury homes, expert guidance, and seamless closings-tailored to you.</span></span>
+          </p>
+          <div class="hero__ctas">
+            <a class="btn btn--gold" href="properties.html">Search Properties</a>
+            <a class="btn btn--outline" href="contact.html">Schedule a Tour</a>
+          </div>
+
+          <!-- Hero Search Bar -->
+          <div class="hero__search-wrap">
+            <div class="search-bar">
+              <div class="search-bar__tabs" role="tablist">
+                <button class="search-bar__tab active" type="button">Buy</button>
+                <button class="search-bar__tab" type="button">Rent</button>
+                <button class="search-bar__tab" type="button">Commercial</button>
+              </div>
+              <div class="search-bar__fields">
+                <div class="search-field">
+                  <label class="search-field__label" for="hero-location">Location</label>
+                  <i class="fas fa-map-marker-alt search-field__icon"></i>
+                  <input id="hero-location" class="search-field__input" type="text" placeholder="City, neighborhood" data-autocomplete="location">
+                </div>
+                <div class="search-field">
+                  <label class="search-field__label" for="hero-type">Property Type</label>
+                  <i class="fas fa-building search-field__icon"></i>
+                  <select id="hero-type" class="search-field__input">
+                    <option>Villa</option>
+                    <option>Apartment</option>
+                    <option>Penthouse</option>
+                    <option>Commercial</option>
+                  </select>
+                </div>
+                <div class="search-field">
+                  <label class="search-field__label" for="hero-price">Price Range</label>
+                  <i class="fas fa-coins search-field__icon"></i>
+                  <select id="hero-price" class="search-field__input">
+                    <option>$500k - $1M</option>
+                    <option>$1M - $3M</option>
+                    <option>$3M - $7M</option>
+                    <option>$7M+</option>
+                  </select>
+                </div>
+                <div class="search-field">
+                  <label class="search-field__label" for="hero-beds">Bedrooms</label>
+                  <i class="fas fa-bed search-field__icon"></i>
+                  <select id="hero-beds" class="search-field__input">
+                    <option>Any</option>
+                    <option>2+</option>
+                    <option>3+</option>
+                    <option>4+</option>
+                  </select>
+                </div>
+                <button class="btn btn--primary" type="button">Find Homes</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-mouse"><span class="hero__scroll-wheel"></span></div>
+        Scroll
+      </div>
+  </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+      <div class="container">
+        <div class="trust-bar__items">
+          <div class="trust-bar__item">
+            <div class="trust-bar__icon"><i class="fas fa-building"></i></div>
+            <div>
+              <div class="trust-bar__value" data-count="2500" data-suffix="+">0</div>
+              <div class="trust-bar__label">Properties Listed</div>
+            </div>
+          </div>
+          <div class="trust-bar__item">
+            <div class="trust-bar__icon"><i class="fas fa-award"></i></div>
+            <div>
+              <div class="trust-bar__value" data-count="15" data-suffix="+">0</div>
+              <div class="trust-bar__label">Years Experience</div>
+            </div>
+          </div>
+          <div class="trust-bar__item">
+            <div class="trust-bar__icon"><i class="fas fa-smile"></i></div>
+            <div>
+              <div class="trust-bar__value" data-count="1200" data-suffix="+">0</div>
+              <div class="trust-bar__label">Happy Clients</div>
+            </div>
+          </div>
+          <div class="trust-bar__item">
+            <div class="trust-bar__icon"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <div class="trust-bar__value" data-count="98" data-suffix="%">0</div>
+              <div class="trust-bar__label">Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Featured Listings</span>
+          <h2 class="section__title section__title--underline">Signature Properties</h2>
+          <p class="section__subtitle">Handpicked luxury homes with unmatched architecture and premium amenities.</p>
+        </div>
+
+        <div class="swiper featured-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="property-card">
+                <div class="property-card__image">
+                  <img class="property-card__img" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900" alt="Modern Luxury Villa" loading="lazy">
+                  <div class="property-card__badge"><span class="badge badge--featured">Featured</span></div>
+                  <div class="property-card__actions">
+                    <button class="property-card__action-btn" data-fav="hp1" aria-label="Save property"><i class="fas fa-heart"></i></button>
+                    <button class="property-card__action-btn" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                  </div>
+                  <div class="property-card__dots">
+                    <span class="property-card__dot active"></span>
+                    <span class="property-card__dot"></span>
+                    <span class="property-card__dot"></span>
+                  </div>
+                </div>
+                <div class="property-card__body">
+                  <div class="property-card__type"><i class="fas fa-home"></i>Villa</div>
+                  <h3 class="property-card__title"><a href="property-detail.html">Modern Luxury Villa</a></h3>
+                  <p class="property-card__location"><i class="fas fa-map-marker-alt"></i>Beverly Hills, CA</p>
+                  <div class="property-card__stats">
+                    <div class="property-card__stat"><i class="fas fa-bed"></i>5 Beds</div>
+                    <div class="property-card__stat"><i class="fas fa-bath"></i>4 Baths</div>
+                    <div class="property-card__stat"><i class="fas fa-vector-square"></i>4,200 sqft</div>
+                  </div>
+                  <div class="property-card__footer">
+                    <div class="property-card__price" data-usd-price="2850000">$2.85M</div>
+                    <a href="property-detail.html" class="btn btn--gold btn--sm">Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="property-card">
+                <div class="property-card__image">
+                  <img class="property-card__img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900" alt="Downtown Sky Penthouse" loading="lazy">
+                  <div class="property-card__badge"><span class="badge badge--new">New</span></div>
+                  <div class="property-card__actions">
+                    <button class="property-card__action-btn" data-fav="hp2" aria-label="Save property"><i class="fas fa-heart"></i></button>
+                    <button class="property-card__action-btn" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                  </div>
+                  <div class="property-card__dots">
+                    <span class="property-card__dot active"></span>
+                    <span class="property-card__dot"></span>
+                    <span class="property-card__dot"></span>
+                  </div>
+                </div>
+                <div class="property-card__body">
+                  <div class="property-card__type"><i class="fas fa-building"></i>Penthouse</div>
+                  <h3 class="property-card__title"><a href="property-detail.html">Downtown Sky Penthouse</a></h3>
+                  <p class="property-card__location"><i class="fas fa-map-marker-alt"></i>Manhattan, NY</p>
+                  <div class="property-card__stats">
+                    <div class="property-card__stat"><i class="fas fa-bed"></i>4 Beds</div>
+                    <div class="property-card__stat"><i class="fas fa-bath"></i>3 Baths</div>
+                    <div class="property-card__stat"><i class="fas fa-vector-square"></i>3,400 sqft</div>
+                  </div>
+                  <div class="property-card__footer">
+                    <div class="property-card__price" data-usd-price="4200000">$4.2M</div>
+                    <a href="property-detail.html" class="btn btn--gold btn--sm">Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="property-card">
+                <div class="property-card__image">
+                  <img class="property-card__img" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900" alt="Beachfront Estate" loading="lazy">
+                  <div class="property-card__badge"><span class="badge badge--hot">Hot</span></div>
+                  <div class="property-card__actions">
+                    <button class="property-card__action-btn" data-fav="hp3" aria-label="Save property"><i class="fas fa-heart"></i></button>
+                    <button class="property-card__action-btn" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                  </div>
+                  <div class="property-card__dots">
+                    <span class="property-card__dot active"></span>
+                    <span class="property-card__dot"></span>
+                    <span class="property-card__dot"></span>
+                  </div>
+                </div>
+                <div class="property-card__body">
+                  <div class="property-card__type"><i class="fas fa-umbrella-beach"></i>Villa</div>
+                  <h3 class="property-card__title"><a href="property-detail.html">Beachfront Estate</a></h3>
+                  <p class="property-card__location"><i class="fas fa-map-marker-alt"></i>Miami Beach, FL</p>
+                  <div class="property-card__stats">
+                    <div class="property-card__stat"><i class="fas fa-bed"></i>6 Beds</div>
+                    <div class="property-card__stat"><i class="fas fa-bath"></i>5 Baths</div>
+                    <div class="property-card__stat"><i class="fas fa-vector-square"></i>5,800 sqft</div>
+                  </div>
+                  <div class="property-card__footer">
+                    <div class="property-card__price" data-usd-price="7500000">$7.5M</div>
+                    <a href="property-detail.html" class="btn btn--gold btn--sm">Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="property-card">
+                <div class="property-card__image">
+                  <img class="property-card__img" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900" alt="Contemporary Apartment" loading="lazy">
+                  <div class="property-card__badge"><span class="badge badge--new">New</span></div>
+                  <div class="property-card__actions">
+                    <button class="property-card__action-btn" data-fav="hp4" aria-label="Save property"><i class="fas fa-heart"></i></button>
+                    <button class="property-card__action-btn" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                  </div>
+                  <div class="property-card__dots">
+                    <span class="property-card__dot active"></span>
+                    <span class="property-card__dot"></span>
+                    <span class="property-card__dot"></span>
+                  </div>
+                </div>
+                <div class="property-card__body">
+                  <div class="property-card__type"><i class="fas fa-building"></i>Apartment</div>
+                  <h3 class="property-card__title"><a href="property-detail.html">Contemporary Apartment</a></h3>
+                  <p class="property-card__location"><i class="fas fa-map-marker-alt"></i>Chicago, IL</p>
+                  <div class="property-card__stats">
+                    <div class="property-card__stat"><i class="fas fa-bed"></i>2 Beds</div>
+                    <div class="property-card__stat"><i class="fas fa-bath"></i>2 Baths</div>
+                    <div class="property-card__stat"><i class="fas fa-vector-square"></i>1,200 sqft</div>
+                  </div>
+                  <div class="property-card__footer">
+                    <div class="property-card__price" data-usd-price="850000">$850K</div>
+                    <a href="property-detail.html" class="btn btn--gold btn--sm">Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="property-card">
+                <div class="property-card__image">
+                  <img class="property-card__img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900" alt="Garden Townhouse" loading="lazy">
+                  <div class="property-card__badge"><span class="badge badge--featured">Featured</span></div>
+                  <div class="property-card__actions">
+                    <button class="property-card__action-btn" data-fav="hp5" aria-label="Save property"><i class="fas fa-heart"></i></button>
+                    <button class="property-card__action-btn" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                  </div>
+                  <div class="property-card__dots">
+                    <span class="property-card__dot active"></span>
+                    <span class="property-card__dot"></span>
+                    <span class="property-card__dot"></span>
+                  </div>
+                </div>
+                <div class="property-card__body">
+                  <div class="property-card__type"><i class="fas fa-home"></i>Townhouse</div>
+                  <h3 class="property-card__title"><a href="property-detail.html">Garden Townhouse</a></h3>
+                  <p class="property-card__location"><i class="fas fa-map-marker-alt"></i>Boston, MA</p>
+                  <div class="property-card__stats">
+                    <div class="property-card__stat"><i class="fas fa-bed"></i>3 Beds</div>
+                    <div class="property-card__stat"><i class="fas fa-bath"></i>3 Baths</div>
+                    <div class="property-card__stat"><i class="fas fa-vector-square"></i>2,100 sqft</div>
+                  </div>
+                  <div class="property-card__footer">
+                    <div class="property-card__price" data-usd-price="1350000">$1.35M</div>
+                    <a href="property-detail.html" class="btn btn--gold btn--sm">Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="property-card">
+                <div class="property-card__image">
+                  <img class="property-card__img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900" alt="Hilltop Villa" loading="lazy">
+                  <div class="property-card__badge"><span class="badge badge--hot">Hot</span></div>
+                  <div class="property-card__actions">
+                    <button class="property-card__action-btn" data-fav="hp6" aria-label="Save property"><i class="fas fa-heart"></i></button>
+                    <button class="property-card__action-btn" aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                  </div>
+                  <div class="property-card__dots">
+                    <span class="property-card__dot active"></span>
+                    <span class="property-card__dot"></span>
+                    <span class="property-card__dot"></span>
+                  </div>
+                </div>
+                <div class="property-card__body">
+                  <div class="property-card__type"><i class="fas fa-mountain"></i>Villa</div>
+                  <h3 class="property-card__title"><a href="property-detail.html">Hilltop Villa</a></h3>
+                  <p class="property-card__location"><i class="fas fa-map-marker-alt"></i>Malibu, CA</p>
+                  <div class="property-card__stats">
+                    <div class="property-card__stat"><i class="fas fa-bed"></i>4 Beds</div>
+                    <div class="property-card__stat"><i class="fas fa-bath"></i>3 Baths</div>
+                    <div class="property-card__stat"><i class="fas fa-vector-square"></i>3,600 sqft</div>
+                  </div>
+                  <div class="property-card__footer">
+                    <div class="property-card__price" data-usd-price="2200000">$2.2M</div>
+                    <a href="property-detail.html" class="btn btn--gold btn--sm">Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section class="why-us">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Why EliteEstates</span>
+          <h2 class="section__title section__title--underline">Trusted By Luxury Buyers Worldwide</h2>
+          <p class="section__subtitle">From negotiation to legal support, our in-house experts protect your investment.</p>
+        </div>
+        <div class="why-us__grid">
+          <div class="feature-item">
+            <div class="feature-item__icon"><i class="fas fa-handshake"></i></div>
+            <h3 class="feature-item__title">Expert Negotiators</h3>
+            <p class="feature-item__desc">We secure the best terms with strategic negotiations backed by market intelligence.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item__icon"><i class="fas fa-check-circle"></i></div>
+            <h3 class="feature-item__title">Verified Listings</h3>
+            <p class="feature-item__desc">Every property is vetted for authenticity, title clearance, and investment value.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item__icon"><i class="fas fa-headset"></i></div>
+            <h3 class="feature-item__title">24/7 Concierge</h3>
+            <p class="feature-item__desc">Global buyers rely on our concierge team for tours, documentation, and closing.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item__icon"><i class="fas fa-scale-balanced"></i></div>
+            <h3 class="feature-item__title">Legal Assistance</h3>
+            <p class="feature-item__desc">In-house legal counsel ensures smooth transactions and compliant contracts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Property Categories -->
+    <section class="categories-section">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Explore Categories</span>
+          <h2 class="section__title section__title--underline">Find Your Ideal Property Type</h2>
+        </div>
+        <div class="categories-grid">
+          <a class="category-card" href="properties.html">
+            <img class="category-card__img" src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=600" alt="Apartments" loading="lazy">
+            <div class="category-card__overlay"></div>
+            <div class="category-card__body">
+              <div class="category-card__icon"><i class="fas fa-building"></i></div>
+              <div class="category-card__name">Apartments</div>
+              <div class="category-card__count">612 Listings</div>
+            </div>
+          </a>
+          <a class="category-card" href="properties.html">
+            <img class="category-card__img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600" alt="Villas" loading="lazy">
+            <div class="category-card__overlay"></div>
+            <div class="category-card__body">
+              <div class="category-card__icon"><i class="fas fa-home"></i></div>
+              <div class="category-card__name">Villas</div>
+              <div class="category-card__count">248 Listings</div>
+            </div>
+          </a>
+          <a class="category-card" href="properties.html">
+            <img class="category-card__img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" alt="Commercial" loading="lazy">
+            <div class="category-card__overlay"></div>
+            <div class="category-card__body">
+              <div class="category-card__icon"><i class="fas fa-city"></i></div>
+              <div class="category-card__name">Commercial</div>
+              <div class="category-card__count">98 Listings</div>
+            </div>
+          </a>
+          <a class="category-card" href="properties.html">
+            <img class="category-card__img" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600" alt="Penthouses" loading="lazy">
+            <div class="category-card__overlay"></div>
+            <div class="category-card__body">
+              <div class="category-card__icon"><i class="fas fa-layer-group"></i></div>
+              <div class="category-card__name">Penthouses</div>
+              <div class="category-card__count">36 Listings</div>
+            </div>
+          </a>
+          <a class="category-card" href="properties.html">
+            <img class="category-card__img" src="https://images.unsplash.com/photo-1472220625704-91e1462799b2?w=600" alt="Plots" loading="lazy">
+            <div class="category-card__overlay"></div>
+            <div class="category-card__body">
+              <div class="category-card__icon"><i class="fas fa-map"></i></div>
+              <div class="category-card__name">Plots</div>
+              <div class="category-card__count">58 Listings</div>
+            </div>
+          </a>
+          <a class="category-card" href="properties.html">
+            <img class="category-card__img" src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600" alt="Townhouses" loading="lazy">
+            <div class="category-card__overlay"></div>
+            <div class="category-card__body">
+              <div class="category-card__icon"><i class="fas fa-house-chimney"></i></div>
+              <div class="category-card__name">Townhouses</div>
+              <div class="category-card__count">114 Listings</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- How It Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">How It Works</span>
+          <h2 class="section__title section__title--underline">A Luxury Experience, Simplified</h2>
+        </div>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-step__number">1</div>
+            <div class="process-step__icon"><i class="fas fa-search"></i></div>
+            <h3 class="process-step__title">Search</h3>
+            <p class="process-step__desc">Explore curated listings with expert insights and transparent pricing.</p>
+            <span class="process-step__connector"></span>
+          </div>
+          <div class="process-step">
+            <div class="process-step__number">2</div>
+            <div class="process-step__icon"><i class="fas fa-calendar-check"></i></div>
+            <h3 class="process-step__title">Visit</h3>
+            <p class="process-step__desc">Schedule private tours, virtual walkthroughs, and neighborhood previews.</p>
+            <span class="process-step__connector"></span>
+          </div>
+          <div class="process-step">
+            <div class="process-step__number">3</div>
+            <div class="process-step__icon"><i class="fas fa-key"></i></div>
+            <h3 class="process-step__title">Move In</h3>
+            <p class="process-step__desc">Close with confidence, supported by our legal, finance, and concierge teams.</p>
+            <span class="process-step__connector"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Client Stories</span>
+          <h2 class="section__title section__title--underline">What Our Clients Say</h2>
+        </div>
+        <div class="swiper testimonials-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-card__quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-card__text">EliteEstates delivered an extraordinary buying experience. Their insight into Beverly Hills inventory saved us months of searching.</p>
+                <div class="testimonial-card__author">
+                  <img class="testimonial-card__author-img" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200" alt="Client">
+                  <div>
+                    <div class="testimonial-card__name">Samantha Boyd</div>
+                    <div class="testimonial-card__role">Tech Executive</div>
+                    <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-card__quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-card__text">From legal to closing, the entire team was proactive and polished. We felt supported through every detail.</p>
+                <div class="testimonial-card__author">
+                  <img class="testimonial-card__author-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200" alt="Client">
+                  <div>
+                    <div class="testimonial-card__name">Jonathan Wells</div>
+                    <div class="testimonial-card__role">Private Investor</div>
+                    <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-card__quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-card__text">They understood our lifestyle immediately. The penthouse we purchased is beyond expectations.</p>
+                <div class="testimonial-card__author">
+                  <img class="testimonial-card__author-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200" alt="Client">
+                  <div>
+                    <div class="testimonial-card__name">Ava Coleman</div>
+                    <div class="testimonial-card__role">Creative Director</div>
+                    <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Agents -->
+    <section class="agents-strip">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Meet Our Agents</span>
+          <h2 class="section__title section__title--underline">Elite Advisors, Global Reach</h2>
+        </div>
+        <div class="agents-strip__grid">
+          <div class="agent-card">
+            <div class="agent-card__image">
+              <img class="agent-card__img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Alexandra Rhodes" loading="lazy">
+              <div class="agent-card__overlay"></div>
+              <div class="agent-card__social">
+                <a href="tel:+13105550101" aria-label="Call"><i class="fas fa-phone"></i></a>
+                <a href="mailto:alexandra@eliteestates.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="agent-card__body">
+              <h3 class="agent-card__name">Alexandra Rhodes</h3>
+              <p class="agent-card__title">Luxury Property Specialist</p>
+              <div class="agent-card__stats">
+                <div class="agent-card__stat">
+                  <span class="agent-card__stat-val">48</span>
+                  <span class="agent-card__stat-label">Listings</span>
+                </div>
+                <div class="agent-card__stat">
+                  <span class="agent-card__stat-val">12+</span>
+                  <span class="agent-card__stat-label">Years</span>
+                </div>
+              </div>
+              <div class="agent-card__actions">
+                <a href="agents.html" class="btn btn--primary btn--sm">View Profile</a>
+                <a href="contact.html" class="btn btn--outline btn--sm">Contact</a>
+              </div>
+            </div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card__image">
+              <img class="agent-card__img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Marcus Johnson" loading="lazy">
+              <div class="agent-card__overlay"></div>
+              <div class="agent-card__social">
+                <a href="tel:+13105550102" aria-label="Call"><i class="fas fa-phone"></i></a>
+                <a href="mailto:marcus@eliteestates.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="agent-card__body">
+              <h3 class="agent-card__name">Marcus Johnson</h3>
+              <p class="agent-card__title">Commercial Real Estate</p>
+              <div class="agent-card__stats">
+                <div class="agent-card__stat">
+                  <span class="agent-card__stat-val">31</span>
+                  <span class="agent-card__stat-label">Listings</span>
+                </div>
+                <div class="agent-card__stat">
+                  <span class="agent-card__stat-val">9+</span>
+                  <span class="agent-card__stat-label">Years</span>
+                </div>
+              </div>
+              <div class="agent-card__actions">
+                <a href="agents.html" class="btn btn--primary btn--sm">View Profile</a>
+                <a href="contact.html" class="btn btn--outline btn--sm">Contact</a>
+              </div>
+            </div>
+          </div>
+          <div class="agent-card">
+            <div class="agent-card__image">
+              <img class="agent-card__img" src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400" alt="Sofia Martinez" loading="lazy">
+              <div class="agent-card__overlay"></div>
+              <div class="agent-card__social">
+                <a href="tel:+13105550103" aria-label="Call"><i class="fas fa-phone"></i></a>
+                <a href="mailto:sofia@eliteestates.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="agent-card__body">
+              <h3 class="agent-card__name">Sofia Martinez</h3>
+              <p class="agent-card__title">Residential Sales Director</p>
+              <div class="agent-card__stats">
+                <div class="agent-card__stat">
+                  <span class="agent-card__stat-val">62</span>
+                  <span class="agent-card__stat-label">Listings</span>
+                </div>
+                <div class="agent-card__stat">
+                  <span class="agent-card__stat-val">8+</span>
+                  <span class="agent-card__stat-label">Years</span>
+                </div>
+              </div>
+              <div class="agent-card__actions">
+                <a href="agents.html" class="btn btn--primary btn--sm">View Profile</a>
+                <a href="contact.html" class="btn btn--outline btn--sm">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="blog-strip">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Market Insights</span>
+          <h2 class="section__title section__title--underline">Latest From Our Journal</h2>
+        </div>
+        <div class="blog-strip__grid">
+          <article class="blog-card">
+            <div class="blog-card__image">
+              <img class="blog-card__img" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=700" alt="Luxury market trends" loading="lazy">
+              <span class="blog-card__category">Luxury</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta"><i class="far fa-calendar"></i>Apr 2, 2026</div>
+              <h3 class="blog-card__title"><a href="blog-detail.html">2026 Luxury Market Outlook: What High-Net-Worth Buyers Want</a></h3>
+              <p class="blog-card__excerpt">Discover the top five trends reshaping luxury real estate demand across coastal markets.</p>
+              <div class="blog-card__footer">
+                <div class="blog-card__author">
+                  <img class="blog-card__author-img" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=80" alt="Author">
+                  <span class="blog-card__author-name">Claire Montgomery</span>
+                </div>
+                <a class="btn btn--outline btn--sm" href="blog-detail.html">Read More</a>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card__image">
+              <img class="blog-card__img" src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=700" alt="Investment strategies" loading="lazy">
+              <span class="blog-card__category">Investment</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta"><i class="far fa-calendar"></i>Mar 28, 2026</div>
+              <h3 class="blog-card__title"><a href="blog-detail.html">Investment-Grade Properties: A Blueprint for Long-Term Wealth</a></h3>
+              <p class="blog-card__excerpt">Strategic acquisition tactics for building resilient real estate portfolios.</p>
+              <div class="blog-card__footer">
+                <div class="blog-card__author">
+                  <img class="blog-card__author-img" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=80" alt="Author">
+                  <span class="blog-card__author-name">Daniel Brooks</span>
+                </div>
+                <a class="btn btn--outline btn--sm" href="blog-detail.html">Read More</a>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card__image">
+              <img class="blog-card__img" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=700" alt="Neighborhood spotlight" loading="lazy">
+              <span class="blog-card__category">Neighborhood</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta"><i class="far fa-calendar"></i>Mar 15, 2026</div>
+              <h3 class="blog-card__title"><a href="blog-detail.html">Neighborhood Spotlight: Beverly Hills Luxury Living</a></h3>
+              <p class="blog-card__excerpt">A curated guide to dining, schools, and cultural lifestyle in Beverly Hills.</p>
+              <div class="blog-card__footer">
+                <div class="blog-card__author">
+                  <img class="blog-card__author-img" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=80" alt="Author">
+                  <span class="blog-card__author-name">Amelia Cruz</span>
+                </div>
+                <a class="btn btn--outline btn--sm" href="blog-detail.html">Read More</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <div class="cta-banner__inner">
+        <div>
+          <span class="cta-banner__eyebrow">Let's Begin</span>
+          <h2 class="cta-banner__title">Ready to Find Your Dream Home?</h2>
+          <p class="cta-banner__subtitle">Get exclusive listings and off-market opportunities delivered to your inbox.</p>
+        </div>
+        <form class="cta-banner__form">
+          <input class="cta-banner__input" type="email" placeholder="Email address" aria-label="Email">
+          <button class="btn btn--gold" type="submit">Get Updates</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="footer__brand-logo">
+              <span class="logo-icon">E</span>
+              <div>
+                <div class="footer__brand-name">EliteEstates <span>Realty Group</span></div>
+                <p class="footer__tagline">Luxury living curated with precision, integrity, and unmatched service.</p>
+              </div>
+            </div>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Quick Links</h3>
+            <div class="footer__links">
+              <a href="about.html">About Us</a>
+              <a href="services.html">Services</a>
+              <a href="agents.html">Agents</a>
+              <a href="blog.html">Blog</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Properties</h3>
+            <div class="footer__links">
+              <a href="properties.html">All Listings</a>
+              <a href="properties.html#luxury">Luxury Estates</a>
+              <a href="properties.html#commercial">Commercial</a>
+              <a href="mortgage-calculator.html">Mortgage Calculator</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Contact</h3>
+            <div class="footer__contact-item"><i class="fas fa-map-marker-alt"></i>450 Rodeo Drive, Beverly Hills, CA</div>
+            <div class="footer__contact-item"><i class="fas fa-phone"></i>+1 (310) 555-0101</div>
+            <div class="footer__contact-item"><i class="fas fa-envelope"></i>concierge@eliteestates.com</div>
+            <form class="footer__newsletter-form">
+              <input class="footer__newsletter-input" type="email" placeholder="Newsletter email">
+              <button class="btn btn--gold btn--sm" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner container">
+        <div class="footer__copyright">© 2026 EliteEstates Realty Group. All Rights Reserved.</div>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <a id="whatsapp-btn" href="https://wa.me/13105550101" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>window.gsap||document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"><\\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>window.ScrollTrigger||document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"><\\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script>window.THREE||document.write('<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>window.Swiper||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>window.AOS||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>window.GLightbox||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/countup.js@2.6.2/dist/countUp.umd.js"></script>
+  <script>window.CountUp||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.js"><\\/script>')</script>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/three-hero.js"></script>
+  <script>
+    (function () {
+      var navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+      function update() {
+        if (window.scrollY > 80) {
+          navbar.classList.add('navbar--solid');
+          navbar.classList.remove('navbar--transparent');
+        } else {
+          navbar.classList.add('navbar--transparent');
+          navbar.classList.remove('navbar--solid');
+        }
+      }
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+    })();
+  </script>
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll('.search-bar__tab');
+      if (!tabs.length) return;
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var banner = document.getElementById('cookie-banner');
+      var acceptBtn = document.getElementById('cookie-accept');
+      var declineBtn = document.getElementById('cookie-decline');
+      if (!banner) return;
+      if (!localStorage.getItem('ee_cookie_consent')) {
+        banner.classList.add('visible');
+      }
+      function closeBanner(state) {
+        if (state) localStorage.setItem('ee_cookie_consent', state);
+        banner.classList.remove('visible');
+        setTimeout(function () { banner.remove(); }, 400);
+      }
+      if (acceptBtn) acceptBtn.addEventListener('click', function () { closeBanner('accepted'); });
+      if (declineBtn) declineBtn.addEventListener('click', function () { closeBanner('declined'); });
+    })();
+  </script>
+  <script>
+    if (window.Swiper) {
+      new Swiper('.featured-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        pagination: { el: '.featured-swiper .swiper-pagination', clickable: true },
+        navigation: { nextEl: '.featured-swiper .swiper-button-next', prevEl: '.featured-swiper .swiper-button-prev' },
+        breakpoints: { 768: { slidesPerView: 2 }, 1200: { slidesPerView: 3 } }
+      });
+      new Swiper('.testimonials-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        autoplay: { delay: 4500 },
+        pagination: { el: '.testimonials-swiper .swiper-pagination', clickable: true }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var hamburger = document.querySelector('.navbar__hamburger');
+      var mobileMenu = document.querySelector('.mobile-menu');
+      var closeBtn = document.querySelector('.mobile-menu__close');
+      if (!hamburger || !mobileMenu || root.dataset.inlineMenuBound === '1') return;
+
+      root.dataset.inlineMenuBound = '1';
+
+      function animateMobileLinks() {
+        if (typeof window.gsap === 'undefined') return;
+        var links = mobileMenu.querySelectorAll('.mobile-menu__link');
+        if (!links.length) return;
+        window.gsap.killTweensOf(links);
+        window.gsap.set(links, { x: -30, opacity: 0 });
+        window.gsap.to(links, {
+          x: 0,
+          opacity: 1,
+          stagger: 0.07,
+          duration: 0.45,
+          ease: 'power3.out',
+          delay: 0.1
+        });
+      }
+
+      function syncMenuState(isOpen) {
+        hamburger.classList.toggle('open', isOpen);
+        mobileMenu.classList.toggle('open', isOpen);
+        mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        document.body.classList.toggle('no-scroll', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if (isOpen) animateMobileLinks();
+      }
+
+      hamburger.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        syncMenuState(!mobileMenu.classList.contains('open'));
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          syncMenuState(false);
+        });
+      }
+
+      mobileMenu.addEventListener('click', function (event) {
+        if (event.target === mobileMenu) {
+          syncMenuState(false);
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          syncMenuState(false);
+        }
+      });
+    })();
+  </script>
+<script>window.addEventListener('load',function(){var l=document.getElementById('page-loader');if(l)l.classList.add('hidden');});setTimeout(function(){var l=document.getElementById('page-loader');if(l)l.classList.add('hidden');},4000);</script></body>
+</html>
+

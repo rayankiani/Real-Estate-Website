@@ -1,0 +1,529 @@
+/* =========================================================
+   EliteEstates — Responsive Stylesheet
+   responsive.css | Mobile-first media queries
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Mobile: up to 479px (default, no query needed for base)
+   --------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   sm: 480px
+   --------------------------------------------------------- */
+@media (min-width: 480px) {
+  .search-bar__fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------------------------------------------------------
+   md: 768px
+   --------------------------------------------------------- */
+@media (min-width: 768px) {
+  :root {
+    --text-5xl: 4rem;
+  }
+
+  .search-bar__fields {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--2.grid-md-1 { grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------
+   lg: 1024px
+   --------------------------------------------------------- */
+@media (min-width: 1024px) {
+  :root {
+    --text-5xl: 3.75rem;
+    --text-6xl: 4.5rem;
+  }
+
+  .navbar__hamburger { display: none; }
+  .navbar__nav       { display: flex; }
+  .navbar__actions .navbar__phone { display: flex; }
+
+  .search-bar__fields {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr auto;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1.35fr 1fr 1fr 1.65fr;
+  }
+
+  .property-card--list .property-card__image {
+    width: 300px;
+    min-width: 300px;
+  }
+}
+
+/* ---------------------------------------------------------
+   xl: 1280px
+   --------------------------------------------------------- */
+@media (min-width: 1280px) {
+  :root {
+    --text-5xl: 4rem;
+    --text-6xl: 5rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   2xl: 1536px
+   --------------------------------------------------------- */
+@media (min-width: 1536px) {
+  :root {
+    --text-5xl: 4.5rem;
+    --text-6xl: 5.5rem;
+  }
+
+  .container {
+    padding: 0 var(--space-12);
+  }
+}
+
+/* =========================================================
+   MAX-WIDTH (mobile-down) QUERIES
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Below 1024px — hide desktop nav, show hamburger
+   --------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .navbar__nav         { display: none; }
+  .navbar__phone       { display: none; }
+  .navbar__hamburger   { display: flex; }
+  .navbar__actions     { gap: var(--space-2); }
+
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-bar__fields {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .search-bar__fields .btn {
+    grid-column: 1 / -1;
+  }
+
+  .page-hero__title { font-size: var(--text-4xl); }
+
+  .stat-item::after { display: none; }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .property-card--list {
+    flex-direction: column;
+  }
+
+  .property-card--list .property-card__image {
+    width: 100%;
+    min-width: unset;
+    height: 230px;
+  }
+}
+
+/* ---------------------------------------------------------
+   Below 768px
+   --------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --section-pad: var(--space-16) 0;
+    --nav-height: 70px;
+  }
+
+  .container {
+    padding: 0 var(--space-5);
+  }
+
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+
+  .section__title { font-size: var(--text-2xl); }
+
+  .btn--lg {
+    padding: 0.85rem 1.75rem;
+    font-size: var(--text-sm);
+  }
+
+  .grid--2,
+  .grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__top { padding: var(--space-12) 0 var(--space-8); }
+
+  .footer__bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-3);
+  }
+
+  .footer__legal {
+    justify-content: center;
+  }
+
+  .page-hero {
+    height: 320px;
+    background-attachment: scroll;
+  }
+
+  .page-hero__title { font-size: var(--text-3xl); }
+  .page-hero__bg    { background-attachment: scroll; }
+
+  .search-bar {
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+  }
+
+  .search-bar__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar__tabs {
+    flex-wrap: wrap;
+  }
+
+  .cta-banner__title { font-size: var(--text-2xl); }
+
+  .cta-banner__form {
+    flex-direction: column;
+  }
+
+  .stat-item__number { font-size: var(--text-4xl); }
+
+  #whatsapp-btn { bottom: var(--space-5); right: var(--space-5); }
+  #back-to-top  { bottom: var(--space-5); right: calc(var(--space-5) + 68px); }
+
+  .process-step__connector { display: none; }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: var(--space-1);
+  }
+
+  .tab-btn {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  #cookie-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-4);
+    border-radius: var(--radius-xl);
+    bottom: 111px;
+    width: calc(100% - 24px);
+    left: 12px;
+    right: 12px;
+    transform: translateX(0) translateY(120px);
+    z-index: var(--z-modal);
+    padding: var(--space-4);
+  }
+
+  #cookie-banner.visible {
+    transform: translateX(0) translateY(0);
+  }
+
+  .cookie-banner__actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modal {
+    padding: var(--space-6) var(--space-5);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    position: fixed;
+    bottom: 0;
+    max-height: 85vh;
+  }
+
+  .compare-tray__slots {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  #compare-tray {
+    padding: var(--space-4) var(--space-5);
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .agent-card__social {
+    opacity: 1;
+  }
+
+  .timeline {
+    padding-left: var(--space-8);
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline__dot {
+    left: -20px;
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Blog masonry → single column */
+  .blog-masonry {
+    columns: 1 !important;
+  }
+
+  /* Filter sidebar moves to modal on mobile */
+  .filter-sidebar {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    background: var(--white);
+    padding: var(--space-8) var(--space-5);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    overflow-y: auto;
+  }
+
+  .filter-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .navbar__actions > :not(.navbar__hamburger) {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   Below 480px
+   --------------------------------------------------------- */
+@media (max-width: 479px) {
+  :root {
+    --text-4xl: 2.25rem;
+    --text-3xl: 1.875rem;
+  }
+
+  .navbar__inner {
+    padding: 0 var(--space-4);
+  }
+
+  .section__title { font-size: var(--text-xl); }
+
+  .property-card__stats {
+    gap: var(--space-3);
+  }
+
+  .agent-card__stats {
+    gap: var(--space-4);
+  }
+
+  .pagination__btn {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-xs);
+  }
+
+  .search-bar__tabs {
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================================================
+   HOME PAGE RESPONSIVE
+   ========================================================= */
+
+/* Hero search at medium */
+@media (max-width: 1023px) {
+  .hero__search-bar {
+    margin: 0 var(--space-4);
+  }
+
+  .hero__headline { font-size: clamp(2.5rem, 6vw, 4rem); }
+}
+
+@media (max-width: 767px) {
+  .hero__headline { font-size: clamp(2rem, 8vw, 3rem); }
+  .hero__content  { padding: 0 var(--space-5); }
+  .hero__ctas     { flex-direction: column; align-items: flex-start; }
+
+  .trust-bar__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card { height: 170px; }
+}
+
+@media (max-width: 479px) {
+  .trust-bar__items {
+    grid-template-columns: 1fr;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   PROPERTIES PAGE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .properties-layout {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+@media (max-width: 1023px) {
+  .properties-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-toggle-btn {
+    display: flex !important;
+  }
+}
+
+/* =========================================================
+   PROPERTY DETAIL RESPONSIVE - Outstanding Mobile Experience
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .detail-sidebar {
+    position: static;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    order: 2;
+  }
+  
+  .detail-sidebar > * {
+    margin-bottom: var(--space-5);
+  }
+}
+
+@media (max-width: 767px) {
+  .detail-layout {
+    padding: var(--space-4) var(--space-3);
+    gap: var(--space-5);
+  }
+  
+  .detail-sidebar {
+    max-width: 100%;
+    order: 2;
+  }
+}
+
+/* =========================================================
+   CONTACT PAGE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-map {
+    height: 350px;
+    order: -1;
+  }
+}
+
+/* =========================================================
+   MORTGAGE CALCULATOR RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  .calculator-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .amortization-table {
+    overflow-x: auto;
+  }
+}
+
+/* =========================================================
+   AGENTS RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  .agents-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 479px) {
+  .agents-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   SERVICES + STATS RESPONSIVE
+   ========================================================= */
+@media (max-width: 1023px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .faq-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
+  .detail-mortgage-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .stats-bar__grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+@media print {
+  * { box-shadow: none !important; }
+
+  .navbar, .footer, #whatsapp-btn, #back-to-top,
+  #scroll-progress, #cookie-banner, .mobile-menu {
+    display: none !important;
+  }
+
+  body { font-size: 11pt; line-height: 1.5; color: #000; }
+
+  a { color: #000; text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 9pt; }
+
+  .container { max-width: 100%; padding: 0; }
+
+  .page-hero { height: 120px; }
+
+  h1, h2, h3 { page-break-after: avoid; }
+}

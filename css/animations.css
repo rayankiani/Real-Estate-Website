@@ -1,0 +1,574 @@
+/* =========================================================
+   EliteEstates — Animations Stylesheet
+   animations.css | AOS overrides, GSAP-triggered classes,
+                    keyframes & reusable animation utilities
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   AOS Custom Overrides
+   --------------------------------------------------------- */
+[data-aos="fade-up"] {
+  transform: translateY(40px);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+[data-aos="fade-down"] {
+  transform: translateY(-30px);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-down"].aos-animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(40px);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-left"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-40px);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-right"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.88);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="zoom-in"].aos-animate {
+  transform: scale(1);
+  opacity: 1;
+}
+
+[data-aos="flip-up"] {
+  transform: perspective(2000px) rotateX(-12deg);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="flip-up"].aos-animate {
+  transform: perspective(2000px) rotateX(0);
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   GSAP Trigger Classes
+   (applied via JS — start state before animation)
+   --------------------------------------------------------- */
+.gsap-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.gsap-hidden-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.gsap-hidden-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.gsap-scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* ---------------------------------------------------------
+   Reveal / Entrance Utilities (CSS-only, no JS needed)
+   --------------------------------------------------------- */
+.animate-fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-zoom-in {
+  animation: zoomIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Delay modifiers */
+.delay-100  { animation-delay: 0.10s; }
+.delay-200  { animation-delay: 0.20s; }
+.delay-300  { animation-delay: 0.30s; }
+.delay-400  { animation-delay: 0.40s; }
+.delay-500  { animation-delay: 0.50s; }
+.delay-600  { animation-delay: 0.60s; }
+.delay-700  { animation-delay: 0.70s; }
+.delay-800  { animation-delay: 0.80s; }
+.delay-1000 { animation-delay: 1.00s; }
+.delay-1200 { animation-delay: 1.20s; }
+.delay-1500 { animation-delay: 1.50s; }
+
+/* ---------------------------------------------------------
+   Keyframe Definitions
+   --------------------------------------------------------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: scale(0.6); }
+  60%  { opacity: 1; transform: scale(1.06); }
+  80%  { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: none; }
+  50%       { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(200,150,62,0.15); }
+}
+
+@keyframes shimmerSweep {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes rotate360 {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes floatDelay {
+  0%, 100% { transform: translateY(0px) rotate(2deg); }
+  50%       { transform: translateY(-14px) rotate(-2deg); }
+}
+
+@keyframes ripple {
+  0%   { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes blink-cursor {
+  50% { border-color: transparent; }
+}
+
+@keyframes countUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------------------------------------------------------
+   Typewriter Effect
+   --------------------------------------------------------- */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--accent);
+  animation:
+    typewriter 3.5s steps(40, end) 1.5s both,
+    blink-cursor 0.75s step-end infinite;
+}
+
+.typewriter-container {
+  display: inline-block;
+  position: relative;
+}
+
+/* ---------------------------------------------------------
+   Floating Animation Utility
+   --------------------------------------------------------- */
+.float-anim {
+  animation: float 4s ease-in-out infinite;
+}
+
+.float-anim-delay {
+  animation: floatDelay 5s ease-in-out infinite 1s;
+}
+
+/* ---------------------------------------------------------
+   Gradient Animated Background
+   --------------------------------------------------------- */
+.gradient-animate {
+  background: linear-gradient(-45deg,
+    var(--primary-dark),
+    var(--primary),
+    var(--primary-light),
+    #1e4a6e
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* ---------------------------------------------------------
+   Particle Fade (for Three.js overlay blend)
+   --------------------------------------------------------- */
+#three-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+#three-canvas.ready {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   Hover Micro-interactions
+   --------------------------------------------------------- */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale {
+  transition: transform var(--transition-bounce);
+}
+
+.hover-scale:hover {
+  transform: scale(1.04);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-gold);
+}
+
+/* Underline reveal */
+.hover-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Gold shimmer on hover */
+.hover-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.25) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-25deg);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.hover-shimmer:hover::after {
+  opacity: 1;
+  animation: shimmerSweep 0.8s ease;
+}
+
+/* ---------------------------------------------------------
+   Scroll Progress Bar
+   --------------------------------------------------------- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-gold);
+  z-index: calc(var(--z-loader) + 1);
+  width: 0%;
+  transition: width 0.15s linear;
+}
+
+/* ---------------------------------------------------------
+   Loading Spinner
+   --------------------------------------------------------- */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: rotate360 0.7s linear infinite;
+}
+
+.spinner--sm {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+/* ---------------------------------------------------------
+   Particle dots (decorative)
+   --------------------------------------------------------- */
+.particle-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-light);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------
+   Gold Divider Animated
+   --------------------------------------------------------- */
+.gold-line {
+  height: 2px;
+  background: var(--gradient-gold);
+  border-radius: var(--radius-full);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gold-line.animate {
+  transform: scaleX(1);
+}
+
+/* ---------------------------------------------------------
+   Number Counter (CountUp.js integration)
+   --------------------------------------------------------- */
+.counter-val {
+  display: inline-block;
+  animation: countUp 0.6s ease both;
+}
+
+/* ---------------------------------------------------------
+   Timeline (About page)
+   --------------------------------------------------------- */
+.timeline {
+  position: relative;
+  padding-left: var(--space-10);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: var(--space-10);
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  background: var(--gradient-gold);
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 3px var(--accent-light);
+  transition: all var(--transition-base);
+}
+
+.timeline__item:hover .timeline__dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 6px rgba(200,150,62,0.2);
+}
+
+.timeline__year {
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semi);
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.timeline__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-semi);
+  margin-bottom: var(--space-2);
+}
+
+.timeline__desc {
+  font-size: var(--text-sm);
+  color: var(--medium-gray);
+  line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   Stagger Utility (JS adds this class in sequence)
+   --------------------------------------------------------- */
+.stagger-child {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-child.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------
+   Page Transition Overlay
+   --------------------------------------------------------- */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--primary);
+  z-index: var(--z-loader);
+  transform: translateY(-100%);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.page-transition.enter {
+  transform: translateY(0);
+}
+
+.page-transition.exit {
+  transform: translateY(100%);
+}
+
+/* ---------------------------------------------------------
+   Ring Animation (Contact page map marker)
+   --------------------------------------------------------- */
+.ring-pulse {
+  position: relative;
+  display: inline-flex;
+}
+
+.ring-pulse::before,
+.ring-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  animation: ripple 2s ease-out infinite;
+}
+
+.ring-pulse::after {
+  animation-delay: 1s;
+}

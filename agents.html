@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Agents | EliteEstates Realty Group</title>
+  <meta name="description" content="Meet EliteEstates luxury real estate agents and advisors.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css';">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/pages/agents.css">
+</head>
+<body class="page-agents">
+  <a class="skip-nav" href="#main-content">Skip to content</a>
+
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader__logo">Elite<span>Estates</span></div>
+    <div class="loader__bar-wrap"><div class="loader__bar"></div></div>
+    <div class="loader__text">Loading agents...</div>
+  </div>
+  <div id="scroll-progress"></div>
+
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+      <a class="navbar__logo" href="index.html" aria-label="EliteEstates Realty Group">
+        <span class="navbar__logo-icon">E</span>
+        <span class="navbar__logo-text">EliteEstates <span>Realty Group</span></span>
+      </a>
+      <nav class="navbar__nav" aria-label="Primary">
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="index.html">Home</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="properties.html">Properties</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="services.html">Services</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="about.html">About</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link active" href="agents.html">Agents</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="blog.html">Blog</a></div>
+        <div class="navbar__nav-item"><a class="navbar__nav-link" href="contact.html">Contact</a></div>
+      </nav>
+      <div class="navbar__actions">
+        <button class="navbar__action-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <button class="navbar__action-btn" data-action="favorites" aria-label="Saved properties"><i class="fas fa-heart"></i><span class="badge-dot" aria-hidden="true"></span></button>
+        <button id="currency-toggle" class="navbar__action-btn" aria-label="Toggle currency">USD</button>
+        <a class="navbar__phone" href="tel:+13105550101"><i class="fas fa-phone"></i> +1 (310) 555-0101</a>
+        <a class="btn btn--gold btn--sm" href="contact.html">List Property</a>
+        <button class="navbar__hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__nav">
+      <button class="mobile-menu__close" aria-label="Close menu">×</button>
+      <a class="mobile-menu__link" href="index.html">Home</a>
+      <a class="mobile-menu__link" href="properties.html">Properties</a>
+      <a class="mobile-menu__link" href="services.html">Services</a>
+      <a class="mobile-menu__link" href="about.html">About</a>
+      <a class="mobile-menu__link active" href="agents.html">Agents</a>
+      <a class="mobile-menu__link" href="blog.html">Blog</a>
+      <a class="mobile-menu__link" href="contact.html">Contact</a>
+      <div class="mobile-menu__actions">
+        <a class="btn btn--primary" href="properties.html">Browse Listings</a>
+        <a class="btn btn--outline" href="contact.html">Schedule a Tour</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" class="agents-page">
+    <section class="page-hero page-hero--agents">
+      <div class="page-hero__bg"></div>
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content">
+        <div class="container">
+          <div class="page-hero__breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> Agents</div>
+          <h1 class="page-hero__title">Meet Our Elite Advisors</h1>
+          <p class="page-hero__subtitle">Specialists in luxury, commercial, investment, and relocation services.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="agents-filter-bar">
+      <div class="container agents-filter-bar__inner">
+        <div>
+          <span class="section__eyebrow">Filter by Specialization</span>
+          <h2 class="section__title">Find the Right Agent</h2>
+        </div>
+        <div class="agents-filter-tags">
+          <button class="agents-filter-tag active" data-spec="all">All</button>
+          <button class="agents-filter-tag" data-spec="luxury">Luxury</button>
+          <button class="agents-filter-tag" data-spec="residential">Residential</button>
+          <button class="agents-filter-tag" data-spec="commercial">Commercial</button>
+          <button class="agents-filter-tag" data-spec="investment">Investment</button>
+          <button class="agents-filter-tag" data-spec="relocation">Relocation</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div id="agents-grid" class="agents-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="footer__brand-logo">
+              <span class="logo-icon">E</span>
+              <div>
+                <div class="footer__brand-name">EliteEstates <span>Realty Group</span></div>
+                <p class="footer__tagline">Luxury living curated with precision, integrity, and unmatched service.</p>
+              </div>
+            </div>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Quick Links</h3>
+            <div class="footer__links">
+              <a href="about.html">About Us</a>
+              <a href="services.html">Services</a>
+              <a href="agents.html">Agents</a>
+              <a href="blog.html">Blog</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Properties</h3>
+            <div class="footer__links">
+              <a href="properties.html">All Listings</a>
+              <a href="properties.html#luxury">Luxury Estates</a>
+              <a href="properties.html#commercial">Commercial</a>
+              <a href="mortgage-calculator.html">Mortgage Calculator</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer__heading">Contact</h3>
+            <div class="footer__contact-item"><i class="fas fa-map-marker-alt"></i>450 Rodeo Drive, Beverly Hills, CA</div>
+            <div class="footer__contact-item"><i class="fas fa-phone"></i>+1 (310) 555-0101</div>
+            <div class="footer__contact-item"><i class="fas fa-envelope"></i>concierge@eliteestates.com</div>
+            <form class="footer__newsletter-form">
+              <input class="footer__newsletter-input" type="email" placeholder="Newsletter email">
+              <button class="btn btn--gold btn--sm" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner container">
+        <div class="footer__copyright">© 2026 EliteEstates Realty Group. All Rights Reserved.</div>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a id="whatsapp-btn" href="https://wa.me/13105550101" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <div id="cookie-banner" role="dialog" aria-live="polite">
+    <p class="cookie-banner__text">We use cookies to personalize your browsing experience and analyze traffic.</p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-decline" class="btn btn--outline btn--sm">Decline</button>
+      <button id="cookie-accept" class="btn btn--gold btn--sm">Accept</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>window.gsap||document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"><\\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>window.ScrollTrigger||document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"><\\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>window.AOS||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"><\\/script>')</script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/agents.js"></script>
+<script>window.addEventListener('load',function(){var l=document.getElementById('page-loader');if(l)l.classList.add('hidden');});setTimeout(function(){var l=document.getElementById('page-loader');if(l)l.classList.add('hidden');},4000);</script></body>
+</html>
+
+
+
